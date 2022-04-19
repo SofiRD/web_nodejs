@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  <title>DB data</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand active" href="/">Home</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      </ul>      
+    </div>
+  </div>
+</nav>
+
+<div class="table-data">
+    <h2>E-shop data <span class="badge bg-secondary">New</span></h2>
+    <table border="1" class="table table-striped">
+        <tr>
+            <th>id_category</th>
+            <th>id_parent</th>
+            <th>id_shop_default</th>
+            <th>level_depth</th>
+            <th>active</th>
+            <th>date_add</th>
+            <th>date_upd</th>
+            <th>name</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.id_category; %></td>
+            <td><%=data.id_parent %></td>
+            <td><%=data.id_shop_default %></td>
+            <td><%=data.level_depth %></td>
+            <td><%=data.active %></td>
+            <td><%=data.date_add %></td>
+            <td><%=data.date_upd %></td>
+            <td><%=data.name %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="8">No Data Found</td>
+        <% } %>
+	    <td><span class="placeholder col-4"></span></td>
+            <td><span class="placeholder col-4"></span></td>
+            <td><span class="placeholder col-4"></span></td>
+            <td><span class="placeholder col-4"></span></td>
+            <td><span class="placeholder col-4"></span></td>
+            <td><span class="placeholder col-4"></span></td>
+            <td><span class="placeholder col-4"></span></td>
+            <td><span class="placeholder col-4"></span></td>
+
+            </tr>
+    </table>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>
